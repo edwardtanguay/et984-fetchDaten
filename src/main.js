@@ -5,7 +5,7 @@ document.querySelector("#app").innerHTML = /* html*/ `
     <div>
 <div class =" flex justify-center mb-32 mt-2">
   <h1 class=" text-4xl font-bold p-2">
-    Ricky and Martin
+    Rick and Martin
   </h1>
 </div >
 <div class =" border border-green-400 w-fit rounded-lg flex justify-center container mb-10">
@@ -26,9 +26,10 @@ document.querySelector("#app").innerHTML = /* html*/ `
 
 const wrapper = document.querySelector(".wrapper")
 let elementsList = [];
+
 const fetchData = async()=>{
   const response = await fetch("https://rickandmortyapi.com/api/character")
-  
+
   const data = await response.json()
 
    elementsList = data.results
@@ -79,7 +80,6 @@ const input = document.querySelector(".input");
 
 
 input.addEventListener("keyup",(e) => {
-  console.log(elementsList)
   const keyword = e.target.value
   if (keyword !==""){
     
