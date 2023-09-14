@@ -7,13 +7,6 @@ document.querySelector("#app").innerHTML = GetMainHtml();
 const wrapper = document.querySelector(".wrapper");
 let elementsList = [];
 
-const fetchData = async () => {
-	const response = await fetch("https://rickandmortyapi.com/api/character");
-	const data = await response.json();
-	elementsList = data.results;
-	renderCharacter(elementsList);
-};
-
 const renderCharacter = (data) => {
 	const elements = data.map((char) => {
 		return GetCharacterHtml(char);
@@ -21,7 +14,16 @@ const renderCharacter = (data) => {
 	wrapper.innerHTML = elements.join("");
 };
 
-fetchData();
+const fetchData = async (callback) => {
+	const response = await fetch("https://rickandmortyapi.com/api/character");
+	const data = await response.json();
+	elementsList = data.results;
+	callback(elementsList);
+};
+
+fetchData((elementsList) => {
+	renderCharacter(elementsList);
+});
 
 const input = document.querySelector(".input");
 
