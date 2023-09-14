@@ -1,27 +1,15 @@
 import "./style.css";
-import { GetCharacterHtml } from "./components/GetCharacterHtml";
 import { GetMainHtml } from "./components/GetMainHtml";
 import * as tools from './tools';
+import { GetCharacterListHtml } from './components/GetCharacterListHtml';
 
 document.querySelector("#app").innerHTML = GetMainHtml();
 
-const wrapper = document.querySelector(".wrapper");
-
-const getCharacterListHtml = (data) => {
-	const elements = data.map((char) => {
-		return GetCharacterHtml(char);
-	});
-	wrapper.innerHTML = elements.join("");
-};
-
 tools.fetchData((elementsList) => {
-	getCharacterListHtml(elementsList);
+	document.querySelector(".wrapper").innerHTML = GetCharacterListHtml(elementsList);
 });
 
-
-//input
 const input = document.querySelector(".input");
-
 input.addEventListener("keyup", (e) => {
 	const keyword = e.target.value.toLowerCase();
 	if (keyword !== "") {
