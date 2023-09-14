@@ -16,7 +16,7 @@ input.addEventListener("keyup", (e) => {
 
 		const searchItemFilter = elementsList.filter((char) => char.name.toLowerCase().includes(keyword));
 		console.log(elementsList);
-		getCharacterListHtml(searchItemFilter);
+		GetCharacterListHtml(searchItemFilter);
 		return;
 	}
 
