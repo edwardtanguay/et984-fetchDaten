@@ -8,7 +8,7 @@ export const GetWrapperHtml = () => {
 
 export const attachWrapperEvents = (characters) => {
 	const input = document.querySelector(".input");
-	input.addEventListener("keyup", (e) => {
+	input.addEventListener("input", (e) => {
 		const keyword = e.target.value.toLowerCase();
 		if (keyword !== "") {
 			const filteredCharacters = characters.filter((char) => char.name.toLowerCase().includes(keyword));
