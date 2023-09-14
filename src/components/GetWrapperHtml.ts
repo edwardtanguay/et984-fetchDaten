@@ -8,7 +8,7 @@ export const GetWrapperHtml = () => {
 };
 
 export const attachWrapperEvents = (characters: ICharacter[]) => {
-	const inputElem = document.querySelector(".input");
+	const inputElem = document.querySelector(".searchText");
 
 	if (inputElem) {
 		inputElem.addEventListener("input", (e: Event) => {
