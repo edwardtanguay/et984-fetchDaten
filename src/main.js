@@ -8,6 +8,5 @@ tools.fetchData((characters) => {
 	document.querySelector("#app").innerHTML = GetMainHtml();
 	document.querySelector(".wrapper").innerHTML = GetCharacterListHtml(characters);
 
-	// attach events
 	attachWrapperEvents(characters);
 });
