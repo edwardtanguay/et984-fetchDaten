@@ -2,23 +2,22 @@ import "./style.css";
 import { GetMainHtml } from "./components/GetMainHtml";
 import * as tools from './tools';
 import { GetCharacterListHtml } from './components/GetCharacterListHtml';
+tools.fetchData((characters) => {
 
-document.querySelector("#app").innerHTML = GetMainHtml();
+	document.querySelector("#app").innerHTML = GetMainHtml();
 
-tools.fetchData((elementsList) => {
-	document.querySelector(".wrapper").innerHTML = GetCharacterListHtml(elementsList);
-});
+	document.querySelector(".wrapper").innerHTML = GetCharacterListHtml(characters);
 
-const input = document.querySelector(".input");
-input.addEventListener("keyup", (e) => {
-	const keyword = e.target.value.toLowerCase();
-	if (keyword !== "") {
+	const input = document.querySelector(".input");
+	input.addEventListener("keyup", (e) => {
+		const keyword = e.target.value.toLowerCase();
+		if (keyword !== "") {
 
-		const searchItemFilter = elementsList.filter((char) => char.name.toLowerCase().includes(keyword));
-		console.log(elementsList);
-		GetCharacterListHtml(searchItemFilter);
-		return;
-	}
+			const filteredCharacters = characters.filter((char) => char.name.toLowerCase().includes(keyword));
+			document.querySelector(".wrapper").innerHTML = GetCharacterListHtml(filteredCharacters);
+			return;
+		}
 
-	GetCharacterListHtml(elementsList);
+	});
+
 });
