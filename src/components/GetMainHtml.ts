@@ -1,4 +1,4 @@
-import { GetWrapperHtml } from "./GetWrapperHtml";
+import { GetCharacterListAreaHtml } from "./GetCharacterListAreaHtml";
 
 export const GetMainHtml = () => {
 	return /*html*/ `
@@ -9,6 +9,6 @@ export const GetMainHtml = () => {
 		<input type="text" class="searchText px-2 py-1 border border-none rounded-lg"/>
 		<button class = "searchButton bg-green-400 px-2 py-1 rounded-lg">Search</button>
 	</div>
-	${GetWrapperHtml()}
+	${GetCharacterListAreaHtml()}
 `;
 }

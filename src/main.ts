@@ -2,7 +2,7 @@ import "./style.css";
 import { GetMainHtml } from "./components/GetMainHtml";
 import * as tools from './tools';
 import { GetCharacterListHtml } from './components/GetCharacterListHtml';
-import { attachWrapperEvents } from "./components/GetWrapperHtml";
+import { attachWrapperEvents } from "./components/GetCharacterListAreaHtml";
 import { ICharacter } from "./interfaces";
 
 tools.fetchData((characters: ICharacter[]) => {

@@ -1,7 +1,7 @@
 import { ICharacter } from "../interfaces";
 import { GetCharacterListHtml } from "./GetCharacterListHtml";
 
-export const GetWrapperHtml = () => {
+export const GetCharacterListAreaHtml = () => {
 	return /*html*/ `
 	<div class ="characterListArea flex flex-wrap gap-4 justify-center items-center bg-slate-100 p-3 m-2"></div>
 	`;
