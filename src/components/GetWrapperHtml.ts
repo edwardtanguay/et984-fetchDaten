@@ -3,7 +3,7 @@ import { GetCharacterListHtml } from "./GetCharacterListHtml";
 
 export const GetWrapperHtml = () => {
 	return /*html*/ `
-	<div class ="wrapper flex flex-wrap gap-4 justify-center items-center bg-slate-100 p-3 m-2"></div>
+	<div class ="characterListArea flex flex-wrap gap-4 justify-center items-center bg-slate-100 p-3 m-2"></div>
 	`;
 };
 
@@ -14,7 +14,7 @@ export const attachWrapperEvents = (characters: ICharacter[]) => {
 		inputElem.addEventListener("input", (e: Event) => {
 			const keyword = (e.target as HTMLInputElement).value.toLowerCase();
 			const filteredCharacters = characters.filter((char) => char.name.toLowerCase().includes(keyword));
-			const wrapperElem = document.querySelector(".wrapper");
+			const wrapperElem = document.querySelector(".characterListArea");
 			if (wrapperElem) {
 				wrapperElem.innerHTML = GetCharacterListHtml(filteredCharacters);
 			}

@@ -10,7 +10,7 @@ tools.fetchData((characters: ICharacter[]) => {
 
 	if (appElem) {
 		appElem.innerHTML = GetMainHtml();
-		const wrapperElem = document.querySelector(".wrapper");
+		const wrapperElem = document.querySelector(".characterListArea");
 		if (wrapperElem) {
 			wrapperElem.innerHTML = GetCharacterListHtml(characters);
 		}
