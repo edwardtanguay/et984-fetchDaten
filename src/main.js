@@ -80,7 +80,7 @@ const input = document.querySelector(".input");
 
 
 input.addEventListener("keyup",(e) => {
-  const keyword = e.target.value
+  const keyword = e.target.value.toLowerCase()
   if (keyword !==""){
     
     const searchItemFilter= elementsList.filter((char)=>char.name.toLowerCase().includes(keyword)) ;
