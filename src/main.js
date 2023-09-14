@@ -20,5 +20,5 @@ input.addEventListener("keyup", (e) => {
 		return;
 	}
 
-	getCharacterListHtml(elementsList);
+	GetCharacterListHtml(elementsList);
 });
