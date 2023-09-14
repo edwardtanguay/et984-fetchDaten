@@ -16,7 +16,7 @@ export const attachWrapperEvents = (characters: ICharacter[]) => {
 			const filteredCharacters = characters.filter((char) => char.name.toLowerCase().includes(keyword));
 			const wrapperElem = document.querySelector<HTMLDivElement>(".characterListArea");
 			if (wrapperElem) {
-				wrapperElem.innerText = GetCharacterListHtml(filteredCharacters);
+				wrapperElem.innerHTML = GetCharacterListHtml(filteredCharacters);
 			}
 			return;
 		});
