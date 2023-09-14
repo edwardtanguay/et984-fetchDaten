@@ -1,30 +1,25 @@
 import "./style.css";
 import { GetCharacterHtml } from "./components/GetCharacterHtml";
 import { GetMainHtml } from "./components/GetMainHtml";
+import * as tools from './tools';
 
 document.querySelector("#app").innerHTML = GetMainHtml();
 
 const wrapper = document.querySelector(".wrapper");
-let elementsList = [];
 
-const renderCharacter = (data) => {
+const getCharacterListHtml = (data) => {
 	const elements = data.map((char) => {
 		return GetCharacterHtml(char);
 	});
 	wrapper.innerHTML = elements.join("");
 };
 
-const fetchData = async (callback) => {
-	const response = await fetch("https://rickandmortyapi.com/api/character");
-	const data = await response.json();
-	elementsList = data.results;
-	callback(elementsList);
-};
-
-fetchData((elementsList) => {
-	renderCharacter(elementsList);
+tools.fetchData((elementsList) => {
+	getCharacterListHtml(elementsList);
 });
 
+
+//input
 const input = document.querySelector(".input");
 
 input.addEventListener("keyup", (e) => {
@@ -33,9 +28,9 @@ input.addEventListener("keyup", (e) => {
 
 		const searchItemFilter = elementsList.filter((char) => char.name.toLowerCase().includes(keyword));
 		console.log(elementsList);
-		renderCharacter(searchItemFilter);
+		getCharacterListHtml(searchItemFilter);
 		return;
 	}
 
-	renderCharacter(elementsList);
+	getCharacterListHtml(elementsList);
 });
