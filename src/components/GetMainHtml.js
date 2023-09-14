@@ -1,3 +1,5 @@
+import { GetWrapperHtml } from "./GetWrapperHtml";
+
 export const GetMainHtml = () => {
 	return /*html*/ `
 	<div class ="container">
@@ -7,6 +9,6 @@ export const GetMainHtml = () => {
 		<input type="text" class="input px-2 py-1 border border-none rounded-lg"/>
 		<button class = "searchButton bg-green-400 px-2 py-1 rounded-lg">Search</button>
 	</div>
-	<div class ="wrapper flex flex-wrap gap-4 justify-center items-center bg-slate-100 p-3 m-2"></div>
+	${GetWrapperHtml()}
 `;
 }
